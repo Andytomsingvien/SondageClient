@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
+  <title>Editer un sondage</title>
+</head>
+<body>
+<div class="navbar">
+  <a class="active" href="/">Accueil</a>
+</div>
+<form id="édition" method="POST" th:action="@{/sondages/maj/{id}(id=${sondage.id})}">
+
+  <label for="createur">Créateur :</label>
+  <input type="text" id="createur" name="createur" th:value="${sondage.createur}"><br><br>
+
+  <label for="description">Description :</label>
+  <input type="text" id="description" name="description" th:value="${sondage.description}"><br><br>
+
+  <label for="question">Question :</label>
+  <input type="text" id="question" name="question"  th:value="${sondage.question}"><br><br>
+
+  <label for="dateCreation">Date de création :</label>
+  <input type="date" id="dateCreation" name="dateCreation" readonly th:value="${sondage.dateCreation}"><br><br>
+
+  <label for="dateCloture">Date de cloture :</label>
+  <input type="date" id="dateCloture" name="dateCloture" th:value="${sondage.dateCloture}"><br><br>
+
+  <input type="submit" value="Modifier" class="modifier"></input>
+
+</form>
+<form method="POST" th:action="@{/sondages/del/{id}(id=${sondage.id})}">
+  <td><button class="supprimer" >Supprimer</button></td>
+</form>
+</body>
+</html>

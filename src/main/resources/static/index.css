@@ -1,0 +1,22 @@
+.tableau {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.titre {
+    width: 33%;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+.sousTitre {
+    width: 33%;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}

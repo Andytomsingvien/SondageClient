@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
+  <title>Formulaire</title>
+</head>
+<body>
+<div class="navbar">
+  <a class="active" href="/">Accueil</a>
+</div>
+<form id="formulaire" method="POST" action="/sondages/form/add">
+
+  <label for="description">Description :</label>
+  <input type="text" id="description" name="description" autofocus required><br><br>
+
+  <label for="question">Question :</label>
+  <input type="text" id="question" name="question" required ><br><br>
+
+  <label for="dateCloture">Date Cloture :</label>
+  <input type="date" id="dateCloture" name="dateCloture" required ><br><br>
+
+  <label for="createur">Créateur :</label>
+  <input type="text" id="createur" name="createur" required ><br><br>
+
+  <input type="submit" value="Valider" class="myButton">
+</form>
+</body>
+</html>

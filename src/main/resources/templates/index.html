@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
+    <title>Page d'accueil</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #4CAF50;
+        }
+        .addfo{
+            padding: 20px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+<div class="navbar">
+    <a class="active" href="/">Accueil</a>
+</div>
+<h1>Liste des sondages:</h1>
+<div class="container">
+    <div class="descrip">
+        <h3>Description</h3>
+        <ul>
+            <li th:each="sondage : ${sondages}">
+                <span class="des" th:text="${sondage.description}"></span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="dateclo">
+        <h3>Date de cloture</h3>
+        <ul>
+            <li th:each="sondage : ${sondages}">
+                <span th:text="${sondage.dateCloture}"></span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="crea">
+        <h3>Createur</h3>
+        <ul>
+            <li th:each="sondage : ${sondages}">
+                <span th:text="${sondage.createur}"></span>
+            </li>
+        </ul>
+    </div>
+    <div class="consul">
+        <h3>Cliquer pour consulter </h3>
+        <ul>
+            <li th:each="sondage : ${sondages}">
+
+                <a th:href="@{/sondages/{id}(id=${sondage.id})}">
+                    <span>Consulter</span>
+                </a>
+                </a>
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="addfo">
+<form method="GET" action="/sondages/form/add">
+    <input class="boutonAjouter" type="submit" value="Ajouter"/>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sondage</title>
+  <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
+</head>
+<body>
+<div class="navbar">
+  <a class="active" href="/">Accueil</a>
+</div>
+<h1><strong>Createur :</strong> <span th:text="${sondage.createur}"></span></h1>
+
+<ul>
+  <li><strong>Description :</strong> <span th:text="${sondage.description}"></span></li>
+  <li><strong>Question :</strong> <span th:text="${sondage.question}"></span></li>
+  <li><strong>Date de création :</strong> <span th:text="${sondage.dateCreation}"></span></li>
+  <li><strong>Date de clôture :</strong> <span th:text="${sondage.dateCloture}"></span></li>
+
+</ul>
+
+<form method="GET" th:action="@{/sondages/maj/{id}(id=${sondage.id})}">
+  <button class="modifier">Modifier</button>
+
+</form>
+</body>
+</html>
