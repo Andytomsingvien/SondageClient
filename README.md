@@ -6,6 +6,8 @@ SondageService est une application qui permet de gérer des sondages. L'applicat
 ## Prérequis
 
 Pour exécuter l'application, vous devez avoir Java 11 ou supérieur installé sur votre système.
+Vous devez créer une base de données sans créer de table. Vous pouvez mettre le nom de votre BDD dans application.properties à cette ligne : spring.datasource.url=jdbc:mysql://localhost:3306/LeNomDeVotreBDD
+
 
 ## Installation
 
